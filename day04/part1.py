@@ -24,8 +24,6 @@ def checkBoard(board):
     return False
 
 def sumUnmarked(board, state):
-    print(board)
-    print(state)
     total = 0
     for rowB, rowS in zip(board, state):
         for num, s in zip(rowB, rowS):
@@ -45,7 +43,6 @@ for bString in data[1:]:
 
 boardStates = [[[False for k in range(5)] for j in range(5)] for i in boards]
 for n in calledNums:
-    print(n)
     for board, state in zip(boards, boardStates):
         r, c = findNum(board, n)
         if r is not None:

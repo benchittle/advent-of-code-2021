@@ -24,8 +24,6 @@ def checkBoard(board):
     return False
 
 def sumUnmarked(board, state):
-    print(board)
-    print(state)
     total = 0
     for rowB, rowS in zip(board, state):
         for num, s in zip(rowB, rowS):
