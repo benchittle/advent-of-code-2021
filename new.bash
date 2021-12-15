@@ -1,13 +1,15 @@
 #!/bin/bash
 
-# Fun utitlity script to create a folder for the next day's code
+# Fun utility script to create a folder for the next day's code
 
 # Get the highest day number so far
 highest=0
 for d in */ ; do
-    num=${d: -3:2}          # Get the day number for the current directory
-    if [ $num -gt $highest ] ; then
-        highest=$num
+    if [ ${d:0:3} = "day" ] ; then      # Directory name starts with "day"
+        num=${d: -3:2}                  # Get the day number for the current directory
+        if [ $num -gt $highest ] ; then  
+            highest=$num
+        fi
     fi
 done
 
